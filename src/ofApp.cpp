@@ -77,14 +77,17 @@ void ofApp::keyReleased(int key){
     if(key == 'c' || key =='C'){
         selectedTool = CURSOR;
         tempPoints.clear();
+        MSM.clear();
     }
     if(key == 'r' || key =='R'){
         selectedTool = RULER;
         tempPoints.clear();
+        MSM.clear();
     }
     if(key == 's' || key =='S'){
         selectedTool = SECTION;
         tempPoints.clear();
+        MSM.clear();
     }
     if(key == 'f' || key =='F'){
         shift = false;

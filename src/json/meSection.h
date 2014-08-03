@@ -85,6 +85,26 @@ public:
         if(sibling != NULL) sibling->draw(corX,corY,beyul);
         
     }
+    mePoint giveone(){
+        return me->giveone();
+    }
+    void adoptChild(meSectionLeaf* l){
+        if(child == NULL){
+            child = l;
+            return;
+        }
+        else{
+            meSectionLeaf * temp;
+            temp = child;
+            while(temp->sibling != NULL){
+                temp = temp->sibling;
+                
+            }
+            temp->sibling = l;
+            return;
+        }
+        
+    }
     
 };
 
