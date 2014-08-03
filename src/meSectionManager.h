@@ -44,7 +44,7 @@ public:
             
         }
         if(tempPoints.size()>0){
-        cout<<"hello";
+    
         ofLine(meX,meY,
                tempPoints[tempPoints.size()-1].getXByCor(corX, beyul),tempPoints[tempPoints.size()-1].getYByCor(corY, beyul));
         }
