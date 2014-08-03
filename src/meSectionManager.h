@@ -35,16 +35,17 @@ public:
     bool validatePoint(mePoint point);
     void draw(float corX, float corY, int beyul,float meX, float meY){
         
-        map->draw(corX,corY,beyul);
+        map->draw(corX,corY,beyul,200);
         
-        
+        ofSetColor(255,0,0);
         for(int i =1; i< tempPoints.size(); i++){
             ofLine(tempPoints[i].getXByCor(corX, beyul),tempPoints[i].getYByCor(corY, beyul),
                    tempPoints[i-1].getXByCor(corX, beyul),tempPoints[i-1].getYByCor(corY, beyul));
             
         }
         if(tempPoints.size()>0){
-        cout<<"hello";
+            
+    
         ofLine(meX,meY,
                tempPoints[tempPoints.size()-1].getXByCor(corX, beyul),tempPoints[tempPoints.size()-1].getYByCor(corY, beyul));
         }

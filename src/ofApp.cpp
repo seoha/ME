@@ -5,15 +5,19 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     font.loadFont( OF_TTF_SANS,11,true,true);
-    state = 0;
-    stateString[0]="None";
-    stateString[1] ="Ruler";
-    stateString[2] ="Section";
+    selectedTool = CURSOR;
+    stateString[CURSOR]="None";
+    stateString[RULER]="Ruler";
+    stateString[SECTION]="Section";
     shift = false;
     beyul = 100;
     corX = corY = 0;
     MSM = meSectionManager();
-
+    gui = new ofxUICanvas();
+    gui->addSlider("BACKGROUND",0.0,255.0,100.0);
+    gui->autoSizeToFitWidgets();
+    ofAddListener(gui->newGUIEvent, this, &ofApp::guiEvent);
+    gui->loadSettings("settings.xml");
 }
 
 //--------------------------------------------------------------
@@ -24,7 +28,7 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    ofBackground(255);
+    ofBackground(200);
     ofSetColor(0);
     ofFill();
     
@@ -46,9 +50,11 @@ void ofApp::draw(){
     }
     ofSetColor(0);
 	font.drawString("fps: " + ofToString((int)ofGetFrameRate()),ofGetWidth()-150,20);
-    font.drawString("state: " + stateString[state],ofGetWidth()-150,40);
+    font.drawString("state: " + stateString[selectedTool],ofGetWidth()-150,40);
     font.drawString("beyul: " + ofToString(beyul),ofGetWidth()-150,60);
+    if(selectedTool == CURSOR){
     font.drawString(MSM.status(mouseX,mouseY),ofGetWidth()-150,80);
+    }
     
 }
 
@@ -75,17 +81,17 @@ void ofApp::keyPressed(int key){
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
     if(key == 'c' || key =='C'){
-        state = 0;
+        selectedTool = CURSOR;
         tempPoints.clear();
         MSM.clear();
     }
     if(key == 'r' || key =='R'){
-        state = 1;
+        selectedTool = RULER;
         tempPoints.clear();
         MSM.clear();
     }
     if(key == 's' || key =='S'){
-        state = 2;
+        selectedTool = SECTION;
         tempPoints.clear();
         MSM.clear();
     }
@@ -127,13 +133,11 @@ void ofApp::mousePressed(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){
-    if(state ==1){
-        RulerMouseReleased(x, y, button);
+    switch(selectedTool){
+        case RULER: RulerMouseReleased(x, y, button); break;
+        case SECTION: MSMMouseReleased(x, y, button); break;
+        default: break;
     }
-    else if(state ==2){
-        MSMMouseReleased(x, y, button);
-    }
-    
 
 }
 
@@ -177,6 +181,7 @@ void ofApp::RulerDraw(){
 }
 
 void ofApp::MSMDraw(){
+    ofSetColor(0);
     MSM.draw(corX, corY, beyul,meX,meY);
 }
 void ofApp::meMouseCalibrate(float x, float y){
@@ -186,5 +191,19 @@ void ofApp::meMouseCalibrate(float x, float y){
     for(vector<meLine>::iterator it = Lines.begin(); it != Lines.end(); ++it){
         sd = it->distFromPoint(meX, meY,mouseX,mouseY,sd,corX,corY,beyul);
     }
+    
+}
+
+
+
+//gui
+void ofApp::exit()
+{
+    gui->saveSettings("settings.xml");
+    delete gui;
+}
+
+void ofApp::guiEvent(ofxUIEventArgs &e)
+{
     
 }
