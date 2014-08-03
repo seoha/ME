@@ -127,13 +127,10 @@ void ofApp::mousePressed(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){
-    if(selectedTool == RULER){
-        RulerMouseReleased(x, y, button);
+    switch(selectedTool){
+        case RULER: RulerMouseReleased(x, y, button); break;
+        case SECTION: MSMMouseReleased(x, y, button); break;
     }
-    else if(selectedTool == SECTION){
-        MSMMouseReleased(x, y, button);
-    }
-    
 
 }
 
