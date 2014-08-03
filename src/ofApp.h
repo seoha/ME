@@ -1,15 +1,18 @@
 #pragma once
 
 #include "ofMain.h"
+#include "ofxUI.h"
 #include "mePoint.h"
 #include "meLine.h"
 #include "meSectionManager.h"
 #include "json/json.h"
 
-
 class ofApp : public ofBaseApp{
 
 public:
+    
+    ofxUICanvas *gui;
+    
     void setup();
     void update();
     void draw();
@@ -44,4 +47,7 @@ public:
     meSectionManager MSM;
     enum Tool{CURSOR, RULER, SECTION};
     Tool selectedTool;
+    
+    void exit();
+    void guiEvent(ofxUIEventArgs &e);
 };
