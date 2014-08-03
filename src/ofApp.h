@@ -38,10 +38,10 @@ public:
     int beyul;
     vector<meLine> Lines;
     string stateString[3];
-    int state;
     bool shift;
     float meX;
     float meY;
     meSectionManager MSM;
-		
+    enum Tool{CURSOR, RULER, SECTION};
+    Tool selectedTool;
 };
