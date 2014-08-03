@@ -71,10 +71,10 @@ bool meSectionManager::validatePoint(mePoint point){
                 else{
                     tempLeaf = currentMother->child;
                     meSectionLeaf *tempSavePoint = new meSectionLeaf(tempPoints);
-                    while(tempLeaf->sibling  != NULL){
+                    while(tempLeaf != NULL){
                         currentMother->child = NULL;
                         if(tempSavePoint->validate(tempLeaf->giveone())){
-                            cout<< "hello";
+                            
                             tempSavePoint->adoptChild(tempLeaf);
                         }
                         else{
