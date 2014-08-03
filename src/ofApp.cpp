@@ -24,7 +24,7 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    ofBackground(255);
+    ofBackground(200);
     ofSetColor(0);
     ofFill();
     
@@ -48,7 +48,9 @@ void ofApp::draw(){
 	font.drawString("fps: " + ofToString((int)ofGetFrameRate()),ofGetWidth()-150,20);
     font.drawString("state: " + stateString[selectedTool],ofGetWidth()-150,40);
     font.drawString("beyul: " + ofToString(beyul),ofGetWidth()-150,60);
+    if(selectedTool == CURSOR){
     font.drawString(MSM.status(mouseX,mouseY),ofGetWidth()-150,80);
+    }
     
 }
 

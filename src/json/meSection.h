@@ -42,7 +42,8 @@ public:
         for(int i = 1; i < points.size(); i++) {
             if (mePoint::intersect(mePoint(-1,-1),point,points[i-1],points[i])) count++;
         }
-        if(mePoint::intersect(mePoint(-1,-1),point,points[0],points[points.size()-1])) count ++;
+        if(mePoint::intersect(mePoint(-1,-1),point,points[0],points[points.size()-1])){ count++;
+        }
         count %= 2;
         if(count == 1) return true;
         else return false;
@@ -79,10 +80,11 @@ public:
         if(me->raycast(p)) return true;
         else return false;
     }
-    void draw(float corX,float corY,int beyul){
+    void draw(float corX,float corY,int beyul,int color){
+        ofSetColor(color);
         me->draw(corX,corY,beyul);
-        if(child != NULL) child->draw(corX,corY,beyul);
-        if(sibling != NULL) sibling->draw(corX,corY,beyul);
+        if(child != NULL) child->draw(corX,corY,beyul,color-40);
+        if(sibling != NULL) sibling->draw(corX,corY,beyul,color-30);
         
     }
     mePoint giveone(){

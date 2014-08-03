@@ -56,6 +56,7 @@ public:
             x < std::min(x3, x4) || x > std::max(x3, x4) ) return false;
         if ( y < std::min(y1, y2) || y > std::max(y1, y2) ||
             y < std::min(y3, y4) || y > std::max(y3, y4) ) return false;
+        
         return true;
         
     }
