@@ -57,6 +57,9 @@ public:
                points[points.size()-1].getXByCor(corX, beyul),points[points.size()-1].getYByCor(corY, beyul));
         
     }
+    mePoint giveone(){
+        return points[0];
+    }
     
     
 };

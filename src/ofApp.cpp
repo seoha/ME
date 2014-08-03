@@ -26,6 +26,9 @@ void ofApp::draw(){
     ofBackground(255);
     ofSetColor(0);
     ofFill();
+    
+    RulerDraw();
+    MSMDraw();
     for(vector<mePoint>::iterator it = tempPoints.begin(); it != tempPoints.end(); ++it){
         ofEllipse(it->getXByCor(corX, beyul),it->getYByCor(corY, beyul),3,3);
     }
@@ -34,14 +37,12 @@ void ofApp::draw(){
             ofSetColor(255,0,0);
         }
         else {
-            ofSetColor(0);
+            ofSetColor(79,217,225);
         }
         ofFill();
         ofLine((it->getS()).getXByCor(corX, beyul),(it->getS()).getYByCor(corY, beyul),(it->getE()).getXByCor(corX, beyul),(it->getE()).getYByCor(corY, beyul));
         
     }
-        RulerDraw();
-        MSMDraw();
     ofSetColor(0);
 	font.drawString("fps: " + ofToString((int)ofGetFrameRate()),ofGetWidth()-150,20);
     font.drawString("state: " + stateString[state],ofGetWidth()-150,40);
@@ -165,6 +166,7 @@ void ofApp::MSMMouseReleased(int x, int y, int button){
 // draw
 void ofApp::RulerDraw(){
     if(tempPoints.size()==1){
+        ofSetColor(79,217,225);
         ofLine(tempPoints[0].getXByCor(corX,beyul),tempPoints[0].getYByCor(corY,beyul),mouseX,mouseY);
     }
     ofEllipse(meX,meY,3,3);
