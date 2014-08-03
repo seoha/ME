@@ -130,6 +130,7 @@ void ofApp::mouseReleased(int x, int y, int button){
     switch(selectedTool){
         case RULER: RulerMouseReleased(x, y, button); break;
         case SECTION: MSMMouseReleased(x, y, button); break;
+        default: break;
     }
 
 }
@@ -174,6 +175,7 @@ void ofApp::RulerDraw(){
 }
 
 void ofApp::MSMDraw(){
+    ofSetColor(0);
     MSM.draw(corX, corY, beyul,meX,meY);
 }
 void ofApp::meMouseCalibrate(float x, float y){
