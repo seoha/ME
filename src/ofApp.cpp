@@ -13,7 +13,11 @@ void ofApp::setup(){
     beyul = 100;
     corX = corY = 0;
     MSM = meSectionManager();
-
+    gui = new ofxUICanvas();
+    gui->addSlider("BACKGROUND",0.0,255.0,100.0);
+    gui->autoSizeToFitWidgets();
+    ofAddListener(gui->newGUIEvent, this, &ofApp::guiEvent);
+    gui->loadSettings("settings.xml");
 }
 
 //--------------------------------------------------------------
@@ -187,5 +191,19 @@ void ofApp::meMouseCalibrate(float x, float y){
     for(vector<meLine>::iterator it = Lines.begin(); it != Lines.end(); ++it){
         sd = it->distFromPoint(meX, meY,mouseX,mouseY,sd,corX,corY,beyul);
     }
+    
+}
+
+
+
+//gui
+void ofApp::exit()
+{
+    gui->saveSettings("settings.xml");
+    delete gui;
+}
+
+void ofApp::guiEvent(ofxUIEventArgs &e)
+{
     
 }
