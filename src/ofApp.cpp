@@ -173,7 +173,7 @@ void ofApp::RulerDraw(){
 }
 
 void ofApp::MSMDraw(){
-    MSM.draw(corX, corY, beyul);
+    MSM.draw(corX, corY, beyul,meX,meY);
 }
 void ofApp::meMouseCalibrate(float x, float y){
     meX = x;

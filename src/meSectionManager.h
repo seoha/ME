@@ -34,7 +34,7 @@ public:
     }
     bool saveWithValidation(vector<mePoint> p);
     bool validatePoint(mePoint point);
-    void draw(float corX, float corY, int beyul){
+    void draw(float corX, float corY, int beyul,float meX, float meY){
         
         map->draw(corX,corY,beyul);
         
@@ -43,6 +43,10 @@ public:
             ofLine(tempPoints[i].getXByCor(corX, beyul),tempPoints[i].getYByCor(corY, beyul),
                    tempPoints[i-1].getXByCor(corX, beyul),tempPoints[i-1].getYByCor(corY, beyul));
             
+        }
+        if(tempPoints.size()>1){
+        ofLine(meX,meY,
+               tempPoints[tempPoints.size()-1].getXByCor(corX, beyul),tempPoints[tempPoints.size()-1].getYByCor(corY, beyul));
         }
         
     }
