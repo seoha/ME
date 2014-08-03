@@ -14,7 +14,6 @@
 #include "mePoint.h"
 #include "meLine.h"
 #include "meSection.h"
-#include <string>
 
 class meSectionManager{
 private:
@@ -44,13 +43,17 @@ public:
                    tempPoints[i-1].getXByCor(corX, beyul),tempPoints[i-1].getYByCor(corY, beyul));
             
         }
-        if(tempPoints.size()>1){
+        if(tempPoints.size()>0){
+        cout<<"hello";
         ofLine(meX,meY,
                tempPoints[tempPoints.size()-1].getXByCor(corX, beyul),tempPoints[tempPoints.size()-1].getYByCor(corY, beyul));
         }
         
     }
     string status(float mouseX,float mouseY);
+    void clear(){
+        tempPoints.clear();
+    }
     
     
     

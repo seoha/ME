@@ -77,14 +77,17 @@ void ofApp::keyReleased(int key){
     if(key == 'c' || key =='C'){
         state = 0;
         tempPoints.clear();
+        MSM.clear();
     }
     if(key == 'r' || key =='R'){
         state = 1;
         tempPoints.clear();
+        MSM.clear();
     }
     if(key == 's' || key =='S'){
         state = 2;
         tempPoints.clear();
+        MSM.clear();
     }
     if(key == 'f' || key =='F'){
         shift = false;
