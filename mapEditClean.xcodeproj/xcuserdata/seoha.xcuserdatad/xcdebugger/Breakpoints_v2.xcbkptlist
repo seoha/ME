@@ -404,7 +404,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/meSectionManager.cpp"
-            timestampString = "428776752.449354"
+            timestampString = "428777802.075527"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "meSectionManager::validatePoint(mePoint point)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/meSectionManager.cpp"
+            timestampString = "428777802.075527"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "76"
@@ -420,7 +436,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/meSectionManager.cpp"
-            timestampString = "428776800.700828"
+            timestampString = "428777802.075527"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "75"
@@ -436,11 +452,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/meSectionManager.cpp"
-            timestampString = "428776802.341069"
+            timestampString = "428778317.33134"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "meSectionManager::validatePoint(mePoint point)"
             landmarkType = "5">
          </BreakpointContent>
