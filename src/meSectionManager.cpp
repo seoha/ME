@@ -64,16 +64,25 @@ bool meSectionManager::validatePoint(mePoint point){
             }
             if(point.getX()== tempPoints[0].getX() && point.getY()== tempPoints[0].getY()){
                 if(currentMother->child == NULL){
-                    currentMother->child = new meSectionLeaf(tempPoints);
+                    currentMother->adoptChild( new meSectionLeaf(tempPoints));
                     tempPoints.clear();
                     return true;
                 }
                 else{
                     tempLeaf = currentMother->child;
+                    meSectionLeaf *tempSavePoint = new meSectionLeaf(tempPoints);
                     while(tempLeaf->sibling  != NULL){
+                        currentMother->child = NULL;
+                        if(tempSavePoint->validate(tempLeaf->giveone())){
+                            tempSavePoint->adoptChild(tempLeaf);
+                        }
+                        else{
+                            currentMother->adoptChild(tempLeaf);
+                        }
+
                         tempLeaf = tempLeaf->sibling;
                     }
-                    tempLeaf->sibling = new meSectionLeaf(tempPoints);
+                    currentMother->adoptChild(tempSavePoint);
                     tempPoints.clear();
                     return true;
                 }
