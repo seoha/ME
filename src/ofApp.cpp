@@ -5,10 +5,10 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     font.loadFont( OF_TTF_SANS,11,true,true);
-    state = 0;
-    stateString[0]="None";
-    stateString[1] ="Ruler";
-    stateString[2] ="Section";
+    selectedTool = CURSOR;
+    stateString[CURSOR]="None";
+    stateString[RULER]="Ruler";
+    stateString[SECTION]="Section";
     shift = false;
     beyul = 100;
     corX = corY = 0;
@@ -46,7 +46,7 @@ void ofApp::draw(){
     }
     ofSetColor(0);
 	font.drawString("fps: " + ofToString((int)ofGetFrameRate()),ofGetWidth()-150,20);
-    font.drawString("state: " + stateString[state],ofGetWidth()-150,40);
+    font.drawString("state: " + stateString[selectedTool],ofGetWidth()-150,40);
     font.drawString("beyul: " + ofToString(beyul),ofGetWidth()-150,60);
     font.drawString(MSM.status(mouseX,mouseY),ofGetWidth()-150,80);
     
@@ -75,15 +75,15 @@ void ofApp::keyPressed(int key){
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
     if(key == 'c' || key =='C'){
-        state = 0;
+        selectedTool = CURSOR;
         tempPoints.clear();
     }
     if(key == 'r' || key =='R'){
-        state = 1;
+        selectedTool = RULER;
         tempPoints.clear();
     }
     if(key == 's' || key =='S'){
-        state = 2;
+        selectedTool = SECTION;
         tempPoints.clear();
     }
     if(key == 'f' || key =='F'){
@@ -124,10 +124,10 @@ void ofApp::mousePressed(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){
-    if(state ==1){
+    if(selectedTool == RULER){
         RulerMouseReleased(x, y, button);
     }
-    else if(state ==2){
+    else if(selectedTool == SECTION){
         MSMMouseReleased(x, y, button);
     }
     
