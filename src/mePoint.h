@@ -60,6 +60,13 @@ public:
         return true;
         
     }
+    static float XbyCor(float mouseX, float corX, int beyul){
+        return (mouseX-corX)*beyul/100;
+    }
+    static float YbyCor(float mouseY, float corY, int beyul){
+        return (mouseY-corY)*beyul/100;
+    }
+    
 };
 
 #endif /* defined(__mapEditClean__mePoint__) */
