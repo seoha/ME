@@ -468,8 +468,6 @@
 				A525EEE7EFD2C2F6778AC2EF /* features.h */,
 				1B980CC0EB7DE435544D8AC7 /* forwards.h */,
 				537A916225B7C7C3ECB329D7 /* json.h */,
-				2032CFFDA8A1B04FCEEF9E20 /* meSection.cpp */,
-				018B342CB31D27375697DE11 /* meSection.h */,
 				8E652AB790481FCCEC806D6C /* reader.h */,
 				DFFFF0F10F89ED933B47EEA3 /* value.h */,
 				0EAA65068115553B57DC4F57 /* writer.h */,
@@ -590,6 +588,8 @@
 				F42B98502A31B4700E28A056 /* minimap.h */,
 				291B2B1C1991EEF500ABC6D6 /* meLoad.cpp */,
 				291B2B1D1991EEF500ABC6D6 /* meLoad.h */,
+				2032CFFDA8A1B04FCEEF9E20 /* meSection.cpp */,
+				018B342CB31D27375697DE11 /* meSection.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
