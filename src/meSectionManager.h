@@ -56,7 +56,7 @@ public:
         tempPoints.clear();
     }
     
-    
+    meSection* pointToSection(float mouseX, float mouseY, float corX, float corY, int beyul);
     
 };
 

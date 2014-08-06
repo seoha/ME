@@ -14,10 +14,9 @@ void ofApp::setup(){
     corX = corY = 0;
     MSM = meSectionManager();
     gui = new ofxUICanvas();
-    gui->addSlider("BACKGROUND",0.0,255.0,100.0);
-    gui->autoSizeToFitWidgets();
     ofAddListener(gui->newGUIEvent, this, &ofApp::guiEvent);
     gui->loadSettings("settings.xml");
+    _guiManager = new guiManager(&MSM, gui);
 }
 
 //--------------------------------------------------------------
@@ -134,9 +133,11 @@ void ofApp::mousePressed(int x, int y, int button){
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){
     switch(selectedTool){
+        case CURSOR: _guiManager->selectSection(x, y, corX, corY, beyul); break;
         case RULER: RulerMouseReleased(x, y, button); break;
         case SECTION: MSMMouseReleased(x, y, button); break;
-        default: break;
+        default:
+            break;
     }
 
 }
@@ -205,5 +206,13 @@ void ofApp::exit()
 
 void ofApp::guiEvent(ofxUIEventArgs &e)
 {
-    
+    string name = e.getName();
+    if(name == "NAME"){
+        ofxUITextInput *ti = (ofxUITextInput *) e.widget;
+        if(ti->getInputTriggerType() == OFX_UI_TEXTINPUT_ON_ENTER){
+            string nameToGive = ti->getTextString();
+            (_guiManager->selectedSection)->setName(&nameToGive);
+            
+        }
+    }
 }
