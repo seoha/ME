@@ -51,7 +51,7 @@ bool meSectionManager::validatePoint(mePoint point){
         }
         tempPoints.push_back(point);
         return true;
-        
+          
     }
     else{
         if(currentMother->validate(point)){
