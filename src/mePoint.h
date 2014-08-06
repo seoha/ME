@@ -10,7 +10,7 @@
 #define __mapEditClean__mePoint__
 
 #include <iostream>
-
+#include "meMath.h"
 class mePoint{
 private:
     float x;
@@ -52,10 +52,10 @@ public:
         float y = ( pre * (y3 - y4) - (y1 - y2) * post ) / d;
         
         // Check if the x and y coordinates are within both lines
-        if ( x < std::min(x1, x2) || x > std::max(x1, x2) ||
-            x < std::min(x3, x4) || x > std::max(x3, x4) ) return false;
-        if ( y < std::min(y1, y2) || y > std::max(y1, y2) ||
-            y < std::min(y3, y4) || y > std::max(y3, y4) ) return false;
+        if ( x < meMath::min(x1, x2) || x > meMath::max(x1, x2) ||
+            x < meMath::min(x3, x4) || x > meMath::max(x3, x4) ) return false;
+        if ( y < meMath::min(y1, y2) || y > meMath::max(y1, y2) ||
+            y < meMath::min(y3, y4) || y > meMath::max(y3, y4) ) return false;
         
         return true;
         
