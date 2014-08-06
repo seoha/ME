@@ -27,11 +27,13 @@ class meSection{
      */
 private:
     vector<mePoint> points;
+    string *name;;
 public:
     meSection(vector<mePoint> p){
         for(int i =0; i< p.size();i++){
             points.push_back(p[i]);
         }
+        name = new string();
         
     }
     int getNumPoint(){
@@ -60,6 +62,13 @@ public:
     }
     mePoint giveone(){
         return points[0];
+    }
+    
+    void setName(string * n){
+        name = n;
+    }
+    string* getName(){
+        return name;
     }
     
     

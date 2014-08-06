@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "ofxUI.h"
+#include "guiManager.h"
 #include "mePoint.h"
 #include "meLine.h"
 #include "meSectionManager.h"
@@ -12,6 +13,7 @@ class ofApp : public ofBaseApp{
 public:
     
     ofxUICanvas *gui;
+    guiManager *_guiManager;
     
     void setup();
     void update();

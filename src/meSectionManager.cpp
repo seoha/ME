@@ -125,8 +125,21 @@ string meSectionManager::status(float mouseX,float mouseY){
     
 }
 
-
-
+meSection* meSectionManager::pointToSection(float mouseX, float mouseY, float corX, float corY, int beyul){
+    mouseX = mePoint::XbyCor(mouseX, corX, beyul);
+    mouseY = mePoint::YbyCor(mouseY, corY, beyul);
+    
+    meSectionLeaf * temp = map;
+    while(temp->child != NULL){
+        if(temp->validate(mePoint(mouseX,mouseY))){
+            temp = temp->child;
+        }
+        else{
+            temp = temp->sibling;
+        }
+    }
+    return temp->me;
+}
 
 
 

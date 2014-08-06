@@ -48,6 +48,7 @@
 		933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B40EDA85BEB63E46785BC29 /* tinyxml.cpp */; };
 		93ED32CADD1BD17E4881F7B3 /* ofxUISpectrum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84F8606625696F6BBEE352DB /* ofxUISpectrum.cpp */; };
 		948BACEB5029C4176369A43E /* ofxUITabBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 082AD7CBC264AAD9934D1D3F /* ofxUITabBar.cpp */; };
+		9871702F1992849D000703FE /* guiManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9871702D1992849D000703FE /* guiManager.cpp */; };
 		99E89822DB4D09B515F6603D /* ofxUISlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C02F320D740F23BDA90462A /* ofxUISlider.cpp */; };
 		9D44DC88EF9E7991B4A09951 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 832BDC407620CDBA568B713D /* tinyxmlerror.cpp */; };
 		9E650E43FB47AC95909457E9 /* ofxUI2DGraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7ECF03C89BF30098CEF56208 /* ofxUI2DGraph.cpp */; };
@@ -212,6 +213,8 @@
 		94D92AB4D2CF14129EFCE467 /* ofxUIImage.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxUIImage.cpp; path = "../../../addons/ofxUI-master/src/ofxUIImage.cpp"; sourceTree = SOURCE_ROOT; };
 		9604B925D32EE39065747725 /* ofxBaseGui.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxBaseGui.cpp; path = ../../../addons/ofxGui/src/ofxBaseGui.cpp; sourceTree = SOURCE_ROOT; };
 		985C6A2EDD0090DB65FFD5C8 /* ofxUIMultiImageButton.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUIMultiImageButton.h; path = "../../../addons/ofxUI-master/src/ofxUIMultiImageButton.h"; sourceTree = SOURCE_ROOT; };
+		9871702D1992849D000703FE /* guiManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = guiManager.cpp; sourceTree = "<group>"; };
+		9871702E1992849D000703FE /* guiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = guiManager.h; sourceTree = "<group>"; };
 		9DE5AEFB9CDDD96FFC3C323D /* ofxUIMultiImageButton.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxUIMultiImageButton.cpp; path = "../../../addons/ofxUI-master/src/ofxUIMultiImageButton.cpp"; sourceTree = SOURCE_ROOT; };
 		9E01248F5D6B514536C33DE3 /* ofxUITextArea.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxUITextArea.cpp; path = "../../../addons/ofxUI-master/src/ofxUITextArea.cpp"; sourceTree = SOURCE_ROOT; };
 		9EE0DE1995FD351DD61BD3E6 /* ofxUIEventArgs.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxUIEventArgs.cpp; path = "../../../addons/ofxUI-master/src/ofxUIEventArgs.cpp"; sourceTree = SOURCE_ROOT; };
@@ -468,8 +471,6 @@
 				A525EEE7EFD2C2F6778AC2EF /* features.h */,
 				1B980CC0EB7DE435544D8AC7 /* forwards.h */,
 				537A916225B7C7C3ECB329D7 /* json.h */,
-				2032CFFDA8A1B04FCEEF9E20 /* meSection.cpp */,
-				018B342CB31D27375697DE11 /* meSection.h */,
 				8E652AB790481FCCEC806D6C /* reader.h */,
 				DFFFF0F10F89ED933B47EEA3 /* value.h */,
 				0EAA65068115553B57DC4F57 /* writer.h */,
@@ -574,6 +575,8 @@
 			isa = PBXGroup;
 			children = (
 				93BB856DF28762203673BB00 /* json */,
+				2032CFFDA8A1B04FCEEF9E20 /* meSection.cpp */,
+				018B342CB31D27375697DE11 /* meSection.h */,
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
@@ -590,6 +593,8 @@
 				F42B98502A31B4700E28A056 /* minimap.h */,
 				291B2B1C1991EEF500ABC6D6 /* meLoad.cpp */,
 				291B2B1D1991EEF500ABC6D6 /* meLoad.h */,
+				9871702D1992849D000703FE /* guiManager.cpp */,
+				9871702E1992849D000703FE /* guiManager.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -701,6 +706,7 @@
 				856AA354D08AB4B323081444 /* ofxBaseGui.cpp in Sources */,
 				5CBB2AB3A60F65431D7B555D /* ofxButton.cpp in Sources */,
 				B266578FC55D23BFEBC042E7 /* ofxGuiGroup.cpp in Sources */,
+				9871702F1992849D000703FE /* guiManager.cpp in Sources */,
 				483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */,
 				F285EB3169F1566CA3D93C20 /* ofxPanel.cpp in Sources */,
 				837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */,
